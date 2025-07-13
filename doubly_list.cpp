@@ -8,7 +8,7 @@ struct chainNode // 这个结构体描述的是链表的每一个节点
     T element;
     chainNode<T>* next;
     chainNode<T>* previous;
-    
+    int x=1;
     chainNode() {}
     chainNode(const T& element)
     {
