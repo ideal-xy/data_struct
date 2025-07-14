@@ -66,7 +66,7 @@ public:
     {
         check(theIndex);
         std::copy(element+theIndex+1,element+listSize,element+theIndex);
-        element[--listSize].~T();
+        element[listSize--].~T();
     }
 
     void insert(int theIndex,const T& theElement)
