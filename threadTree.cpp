@@ -1,3 +1,4 @@
+
 /*
 首先要有几个关键认知：
 1:传统的二叉链表存储二叉树枝只能体现一种父子关系，但是不可以得到每一个节点的前驱或者后继
@@ -47,5 +48,18 @@ void InTread(ThreadNode<T> *p,ThreadNode<T> *pre)
         // 所以我们需要更新pre，让它指向p。这样，当递归进入右子树时，
         pre = p;
         InTread(p->rchild, pre);
+    }
+}
+
+// 但是最后一个pre节点是没有处理的
+template<typename T>
+void createThreadTree(ThreadNode<T>* root)
+{
+    ThreadNode<T>* pre = nullptr;
+    if(root != nullptr)
+    {
+        InTread(root, pre);
+        pre->rchild = nullptr;
+        pre->rtag = 1;
     }
 }
