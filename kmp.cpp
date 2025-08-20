@@ -36,18 +36,24 @@ int kmpMatch(string text, string pattern, vector<int>& pm) {
     int i = 0;  // 主串指针
     int j = 0;  // 模式串指针
     
-    while (i < n) {
-        if (text[i] == pattern[j]) {
+    while (i < n) 
+    {
+        if (text[i] == pattern[j]) 
+        {
             i++;
             j++;
-            if (j == m) {  // 匹配成功
+            if (j == m) 
+            {  // 匹配成功
                 return i - m;
             }
-        } else {
-            if (j > 0) {
+        } else 
+        {
+            if (j > 0) 
+            {
                 // 利用PM值回退模式串指针（本质是向右移动模式串）
                 j = pm[j-1];
-            } else {
+            } else 
+            {
                 // 模式串指针在0位置时，主串后移
                 i++;
             }
