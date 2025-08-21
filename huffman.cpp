@@ -145,7 +145,7 @@ void huffmanCoding(HNode* root,int len,int arr[])
 
     if(root != nullptr)
     {
-        if(root->lchild == nullptr && root->rchild == nullptr)
+        if(root->lchild == nullptr && root->rchild == nullptr) //  遇到叶节点的处理方式
         {
             std::cout << "权重为" << root->weight << "的字符的huffman编码为" << std::endl;
             for(int i=0;i < len;++i)
@@ -154,7 +154,8 @@ void huffmanCoding(HNode* root,int len,int arr[])
             }
         }
 
-        else {
+        else 
+        {
         arr[len] = 1;
         huffmanCoding(root->lchild, len + 1, arr);
 
