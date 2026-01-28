@@ -20,6 +20,8 @@ struct binaryNode
         this->element = theElement;
     }
 
+    T getElement() {return element;}
+
 };
 
 template <typename T>
@@ -190,12 +192,5 @@ public:
         treeSize = 0;
     }
 
-    
-
-
-
-
-
-
-
 };
+

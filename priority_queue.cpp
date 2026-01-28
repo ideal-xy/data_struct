@@ -1,16 +1,14 @@
 #include <vector>
 #include <functional>
 
-template<typename T, typename Compare = std::less<T>>
+template<typename T, typename Container = std::vector<T>,typename Compare = std::less<T>>
 class PriorityQueue 
 {
 private:
-    std::vector<T> heap;
+    Container heap;
     Compare comp;
-    
-    
-    
-    void sift_up(int index) //  实际上就是二次堆的插入操作，新元素放置在最后一个叶节点
+     
+    void sift_up(int index) //实际上就是二次堆的插入操作，新元素放置在最后一个叶节点
     {
         while (index > 0) 
         {

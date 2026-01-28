@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include <sstream>
 
 template <typename T>

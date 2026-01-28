@@ -49,7 +49,7 @@ void InTread(ThreadNode<T> *p,ThreadNode<T> *pre)
         pre = p;
         InTread(p->rchild, pre);
     }
-}
+} 
 
 // 但是最后一个pre节点是没有处理的
 template<typename T>

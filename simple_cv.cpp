@@ -1,5 +1,4 @@
-#include <iostream>
-#include <queue.h>
+#include <queue>
 
 struct position
 {
@@ -23,7 +22,7 @@ void labelComponents(int size)
     }
 
     int numOfNrs = 4;
-    queue<position> q;
+    std::queue<position> q;
     position here,nbr;
     int id = 1;
 

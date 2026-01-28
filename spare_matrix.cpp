@@ -1,7 +1,6 @@
 #include <linearList.h>
 #include <iostream>
 
-template <typename T>
 struct  matrixTerm
 {
    int row;

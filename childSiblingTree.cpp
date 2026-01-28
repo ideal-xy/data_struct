@@ -1,9 +1,15 @@
 #include <cstddef>
+#include <type_traits>
 #include <vector>
+#include <concepts>
 #include <iostream>
 #include <stdexcept>
 
 template<typename T>
+concept Yes = std::is_arithmetic_v<T>;
+
+
+
 struct TreeNode
 {
     T data;
@@ -56,7 +62,7 @@ public:
 
     void addChild(TreeNode<T>* parentNode,const T& val)
     {
-        if(!parentNode) ;
+        if(!parentNode)
 
         TreeNode<T>* newNode = new TreeNode<T>(val);
 
