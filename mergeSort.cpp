@@ -1,6 +1,5 @@
 #include <cstdlib>
 
-
 /*
  * 将一个数组中的两个相邻有序区间合并成一个
  *
@@ -67,6 +66,3 @@ void merge_sort_up2down(int a[], int start, int end)
 * 数的高度是 log_{2}n,所以总的时间复杂度O(nlogn)
 * 
 */
-
-
-

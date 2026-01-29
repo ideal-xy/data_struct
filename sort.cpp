@@ -84,7 +84,8 @@ int partition(std::vector<int> &nums, int left, int right)
 {
     int pivot = nums[left]; //  注意保存基准值
     int i = left, j = right;
-    while (i < j) {
+    while (i < j) // 二者必定会相遇
+    {
         while (i < j && nums[j] >= pivot)
             j--;
         while (i < j && nums[i] <= pivot)
@@ -188,7 +189,7 @@ void quickSortIterative(std::vector<int>& nums,int left,int right)
 
         int pivotIndex = partition(nums, l, r); 
         
-        if(pivotIndex - 1 > l)
+        if(pivotIndex - 1 > l)  
         {
             s.push(l);
             s.push(pivotIndex - 1);
