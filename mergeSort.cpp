@@ -36,3 +36,37 @@ void merge(int a[],int start,int mid,int end)
     
     free(tmp);
 }
+
+void merge_sort_up2down(int a[], int start, int end)
+{
+    if(a==NULL || start >= end)
+        return ;
+
+    int mid = (end + start)/2;
+    merge_sort_up2down(a, start, mid); // 递归排序a[start...mid]
+    merge_sort_up2down(a, mid+1, end); // 递归排序a[mid+1...end]
+
+    // a[start...mid] 和 a[mid+1...end]是两个有序空间，
+    // 将它们排序成一个有序空间a[start...end]
+    merge(a, start, mid, end);
+}
+
+
+/*
+* 递推式为：T(n) = 2T(n/2) + O(n)
+*      2T(n/2)：将数组分成两半，分别递归排序
+*      O(n)：合并两个已排序的子数组所需的时间
+* 时间复杂度的计算：
+           T(n)
+          /     \
+     T(n/2)     T(n/2)      ← 第1层：合并成本 = n
+      /   \      /   \
+  T(n/4) T(n/4) T(n/4) T(n/4) ← 第2层：合并成本 = n/2 + n/2 = n
+   ...    ...   ...    ...
+*
+* 数的高度是 log_{2}n,所以总的时间复杂度O(nlogn)
+* 
+*/
+
+
+
