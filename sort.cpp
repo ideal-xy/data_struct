@@ -151,13 +151,14 @@ void quickSort(std::vector<int> &nums, int left, int right)
 /*
 为了控制递归栈的深度，可以优化原来的写法
 */
-/* 快速排序（递归深度优化） */
+/* 快速排序（递归深度优化）*/
 void quickSortPro(std::vector<int> &nums, int left, int right) {
     // 子数组长度为 1 时终止
     while (left < right) {
         // 哨兵划分操作
         int pivot = partition(nums, left, right);
         // 对两个子数组中较短的那个执行快速排序
+        // 每次被排序的子数组长度都是小于 n/2 的，所以递归栈深度小于logn
         if (pivot - left < right - pivot) {
             quickSortPro(nums, left, pivot - 1); // 递归排序左子数组
             left = pivot + 1;                 // 剩余未排序区间为 [pivot + 1, right]
