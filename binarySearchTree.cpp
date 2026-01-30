@@ -158,6 +158,59 @@ public:
         }
     }
 
+
+    TreeNode* findMin(TreeNode* root)
+    {
+        while (root->left != nullptr)
+            root = root->left;
+
+        return root;
+    }
+
+    TreeNode* findMax(TreeNode* root)
+    {
+        while (root->right != nullptr)
+            root = root->right;
+
+        return root;
+    }
+
+
+
+    TreeNode* remove_2(TreeNode* root,int key)
+    {
+        if (root == nullptr) return nullptr; 
+
+        if (key < root->value) root->left = remove_2(root->left, key);
+        if (key > root->value) root->right = remove_2(root->right,key);
+
+        // 找到了要删除的节点
+        if (root->left == nullptr)
+        {
+            TreeNode* tmp = root->right;
+            delete root;
+            return tmp;
+        }
+        
+        if (root->right == nullptr)
+        {
+            TreeNode* tmp = root->left;
+            delete root;
+            return tmp;
+        }
+
+        if (root->left != nullptr && root->right != nullptr)
+        {
+            TreeNode* successor = findMin(root->right);
+            root->value = successor->value;
+            root->right = remove_2(root->right, root->value);
+        }
+
+        return root;
+    }
+
 };
+
+
 
 
