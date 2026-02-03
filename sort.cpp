@@ -154,7 +154,8 @@ void quickSort(std::vector<int> &nums, int left, int right)
 /* 快速排序（递归深度优化）*/
 void quickSortPro(std::vector<int> &nums, int left, int right) {
     // 子数组长度为 1 时终止
-    while (left < right) {
+    while (left < right) 
+    {
         // 哨兵划分操作
         int pivot = partition(nums, left, right);
         // 对两个子数组中较短的那个执行快速排序
