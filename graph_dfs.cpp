@@ -39,7 +39,4 @@ int main()
 
     dfs(graph, res, path, 1,n);
 
-
-
-
 }
