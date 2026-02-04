@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -119,6 +120,7 @@ int main() {
     int numPoints = 10000;  // 点的数量
     int maxCoord = 10000;   // 坐标范围
 
+    std::cin.tie(nullptr)->sync_with_stdio(false);    
     // 生成随机点
     std::vector<Point> points = generateRandomPoints(numPoints, maxCoord);
 
